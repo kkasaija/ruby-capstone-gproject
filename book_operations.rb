@@ -1,12 +1,41 @@
 require 'json'
 require './book'
 require './label'
-require '.persist_data'
+require './persist_data'
 
 class BookOperations
   def initialize
     @books = []
     @labels = []
+  end
+
+  # Function to Return a list of labels
+
+  def list_all_books
+    load_books = PersistData.new('books.json')
+    books = load_books.load
+    if books.empty?
+      puts 'no book records found'.upcase
+    else
+      books.each_with_index do |book, index|
+        puts "(#{index}) Name: #{book['name']}, Publisher: #{book['publisher']}, PublishedDate:#{book['publish_date']}"
+      end
+      puts
+    end
+  end
+
+  # Function to Return a list of labels
+
+  def list_all_labels
+    load_labels = PersistData.new('labels.json')
+    labels = load_labels.load
+    if labels.empty?
+      puts 'no label records found'.upcase
+    else
+      labels.each_with_index do |label, index|
+        puts "(#{index}) Title: #{label['title']}, Color: #{label['color']}"
+      end
+    end
   end
 
   # Function to create a lable
