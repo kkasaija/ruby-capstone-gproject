@@ -1,6 +1,7 @@
 require 'json'
 require './book'
 require './label'
+require '.persist_data'
 
 class BookOperations
   def initialize
@@ -34,6 +35,7 @@ class BookOperations
       label.add_item(book)
       @labels << label unless @labels.include?(label)
       @books << book
+      store_books
       puts 'Book added successfully'
     end
 
@@ -57,5 +59,16 @@ class BookOperations
       else
         create_label
       end
+    end
+
+    # Function to store Books
+  
+    def store_books
+      stored_books = PersistData.new('books.json')
+      books = stored_books.load
+      @books.each do |book|
+        books << { name: book.name, publisher: book.publisher, publish_date: book.publish_date, cover_state: book.cover_state  }
+      end
+      stored_books.save(books)
     end
 end
