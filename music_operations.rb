@@ -9,7 +9,7 @@ class MusicOperations
   end
 
   # Function to Retrieve albums
-  
+
   def list_all_albums
     load_albums = PersistData.new('albums.json')
     albums = load_albums.load
@@ -34,7 +34,7 @@ class MusicOperations
         puts "#{index + 1}. Genre: #{genre['name']}"
       end
     end
-  end  
+  end
 
   # Function to add genre
 
