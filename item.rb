@@ -1,14 +1,14 @@
 require 'date'
 
 class Item
-  attr_accessor :id, :archived, :publish_date,:genre, :author, :label
+  attr_reader :genre, :author, :label
+  attr_accessor :id, :archived, :source, :publish_date, :name
 
-  def initialize(genre, author, publish_date)
+  def initialize(publish_date:, name:, archived: false)
     @id = Random.rand(1..1000)
-    @genre = genre
-    @author = author
-    @publish_date = publish_date
-    @archived = false
+    @publish_date = Date.parse(publish_date)
+    @archived = archived
+    @name = name
   end
 
   def can_be_archived?
