@@ -8,6 +8,18 @@ class MusicOperations
     @genres = []
   end
 
+  def list_all_albums
+    load_albums = PersistData.new('albums.json')
+    albums = load_albums.load
+    if albums.empty?
+      puts 'no album records found'.upcase
+    else
+      albums.each_with_index do |album, index|
+        puts "(#{index}) MusicAlbum: #{album['publish_date']}, OnSpotfy: #{album['on_spotify']}"
+      end
+    end
+  end
+
   # Function to add genre
 
   def add_genre(item)
