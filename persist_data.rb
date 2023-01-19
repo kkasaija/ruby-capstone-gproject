@@ -14,6 +14,7 @@ class PersistData
 
   def load
     return [] unless File.exist?(@path_name)
+
     file = File.read(@path_name)
     JSON.parse(file)
   end

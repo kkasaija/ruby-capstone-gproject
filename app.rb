@@ -24,7 +24,7 @@ class App
     puts '7 - Add a book'
     puts '8 - Add a music album'
     puts '9 - Add a game'
-    puts "Q -> Quit" 
+    puts 'Q -> Quit'
     puts('-------------------------------')
     print 'Select operation: '
   end
@@ -35,19 +35,19 @@ class App
     when '1'
       operation.list_all_books
     when '2'
-      #list all music albums
+      # list all music albums
     when '3'
-      #list_of_games
+      # list_of_games
     when '4'
-      #list all genres
+      # list all genres
     when '5'
       operation.list_all_labels
     when '6'
-      #list_all_authors
+      # list_all_authors
     when '7'
       operation.add_book
     when '8'
-      #add_game
+      # add_game
     else
       'Out of range, Enter digits: 1 thru 8'
     end

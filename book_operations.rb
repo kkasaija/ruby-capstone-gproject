@@ -6,11 +6,11 @@ require '.persist_data'
 class BookOperations
   def initialize
     @books = []
-    @labels =[]
+    @labels = []
   end
 
   # Function to create a lable
-  
+
   def create_label
     print 'Add label title: '
     title = gets.chomp
@@ -18,7 +18,7 @@ class BookOperations
     color = gets.chomp
     Label.new(title: title, color: color)
   end
-  
+
   # Function to add Book
 
   def add_book
@@ -63,19 +63,20 @@ class BookOperations
   end
 
   # Function to store Books
-  
+
   def store_books
     stored_books = PersistData.new('books.json')
     books = stored_books.load
     @books.each do |book|
-      books << { name: book.name, publisher: book.publisher, publish_date: book.publish_date, cover_state: book.cover_state  }
+      books << { name: book.name, publisher: book.publisher, publish_date: book.publish_date,
+                 cover_state: book.cover_state }
     end
     stored_books.save(books)
   end
 
-    # Function to store Labels
+  # Function to store Labels
 
-    def store_labels
+  def store_labels
     stored_labels = PersistData.new('labels.json')
     labels = stored_labels.load
     @labels.each do |label|
