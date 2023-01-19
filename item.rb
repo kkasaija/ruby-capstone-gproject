@@ -23,5 +23,10 @@ class Item
     @label = label
     label.items.push(self) unless label.items.include?(self)
   end
+
+  def genre=(genre)
+    @genre = genre
+    genre.items.push(self) unless genre.items.include?(self)
+  end
   private :can_be_archived?
 end
