@@ -8,6 +8,8 @@ class MusicOperations
     @genres = []
   end
 
+  # Function to add genre
+
   def add_genre(item)
     puts 'Enter genre name: '
     name = gets.chomp
@@ -16,4 +18,18 @@ class MusicOperations
     @genres.push(genre)
     puts 'Genre added successfully!'
   end
+
+  # Function to add albums
+
+  def add_music_album
+    puts 'Is the music on spotify? (Y/N): '
+    on_spotify = gets.chomp.downcase == 'y'
+    puts 'Enter publish date (YYYY-MM-DD): '
+    publish_date = gets.chomp
+    music = Music.new(publish_date: publish_date, on_spotify: on_spotify)
+    add_genre(music)
+    @music_albums.push(music)
+    puts 'Music album added successfully!'
+  end
+  
 end
