@@ -8,6 +8,8 @@ class MusicOperations
     @genres = []
   end
 
+  # Function to Retrieve albums
+  
   def list_all_albums
     load_albums = PersistData.new('albums.json')
     albums = load_albums.load
@@ -19,6 +21,20 @@ class MusicOperations
       end
     end
   end
+
+  # Function to retrieve genre
+
+  def list_all_genres
+    load_genres = PersistData.new('genres.json')
+    genres = load_genres.load
+    if genres.empty?
+      puts 'no genre records found'.upcase
+    else
+      genres.each_with_index do |genre, index|
+        puts "#{index + 1}. Genre: #{genre['name']}"
+      end
+    end
+  end  
 
   # Function to add genre
 
