@@ -30,6 +30,7 @@ class MusicOperations
     music = Music.new(publish_date: publish_date, on_spotify: on_spotify)
     add_genre(music)
     @music_albums.push(music)
+    store_album
     puts 'Music album added successfully!'
   end
 
@@ -42,5 +43,16 @@ class MusicOperations
       genres.push({ name: genre.name })
     end
     stored_genres.save(genres)
+  end
+
+  # Method to store albums
+
+  def store_album
+    stored_albums = PersistData.new('albums.json')
+    albums = stored_albums.load
+    @music_albums.each do |album|
+      albums.push({ publish_date: album.publish_date, on_spotify: album.on_spotify })
+    end
+    stored_albums.save(albums)
   end
 end
