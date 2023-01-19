@@ -10,6 +10,7 @@ class App
         break
       end
       option(input)
+      extras(input)
     end
   end
 
@@ -44,12 +45,20 @@ class App
       operation.list_all_labels
     when '6'
       # list_all_authors
+    end
+  end
+
+  def extras(option)
+    operation = BookOperations.new
+    case option
     when '7'
       operation.add_book
     when '8'
+      # add_album
+    when '9'
       # add_game
     else
-      'Out of range, Enter digits: 1 thru 8'
+      'Out of range, Enter digits: 1 thru 9'
     end
   end
 end
