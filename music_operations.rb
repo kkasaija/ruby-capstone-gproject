@@ -16,6 +16,7 @@ class MusicOperations
     genre = Genre.new(name)
     genre.add_item(item)
     @genres.push(genre)
+    store_genre
     puts 'Genre added successfully!'
   end
 
@@ -31,5 +32,15 @@ class MusicOperations
     @music_albums.push(music)
     puts 'Music album added successfully!'
   end
-  
+
+  # Method to store genre
+
+  def store_genre
+    stored_genres = PersistData.new('genres.json')
+    genres = stored_genres.load
+    @genres.each do |genre|
+      genres.push({ name: genre.name })
+    end
+    stored_genres.save(genres)
+  end
 end
