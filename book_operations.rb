@@ -7,6 +7,16 @@ class BookOperations
     @books = []
     @labels =[]
   end
+
+  # Function to create a lable
+  
+  def create_label
+    print 'Add label title: '
+    title = gets.chomp
+    print 'Add label color: '
+    color = gets.chomp
+    Label.new(title: title, color: color)
+  end
   
     # Function to add Book
   
