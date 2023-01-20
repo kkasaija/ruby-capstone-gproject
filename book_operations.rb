@@ -18,7 +18,7 @@ class BookOperations
       puts 'no book records found'.upcase
     else
       books.each_with_index do |book, index|
-        puts "(#{index}) Name: #{book['name']}, Publisher: #{book['publisher']}, PublishedDate:#{book['publish_date']}"
+        puts "(#{index}) Name: #{book['name']}, Publisher: #{book['publisher']}, PublishedDate: #{book['publish_date']}"
       end
       puts
     end
@@ -33,7 +33,7 @@ class BookOperations
       puts 'no label records found'.upcase
     else
       labels.each_with_index do |label, index|
-        puts "(#{index}) Title: #{label['title']}, Color: #{label['color']}"
+        puts "(#{index}) Lable: #{label['title']}, Color: #{label['color']}"
       end
     end
   end
