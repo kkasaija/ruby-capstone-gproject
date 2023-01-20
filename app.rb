@@ -1,5 +1,7 @@
-require './book_operations'
-require './music_operations'
+require_relative './operations/book_operations'
+require_relative './operations/music_operations'
+require_relative './operations/game_operations'
+
 class App
   def console_entry_point
     puts ''
@@ -34,35 +36,34 @@ class App
   def option(input)
     operation = BookOperations.new
     music = MusicOperations.new
+    games = GameOperations.new
     case input
     when '1'
       operation.list_all_books
     when '2'
-      # list all music albums
       music.list_all_albums
     when '3'
-      # list_of_games
+      games.list_all_games
     when '4'
-      # list all genres
       music.list_all_genres
     when '5'
       operation.list_all_labels
     when '6'
-      # list_all_authors
+      games.list_all_authors
     end
   end
 
   def extras(option)
     operation = BookOperations.new
     music = MusicOperations.new
+    games = GameOperations.new
     case option
     when '7'
       operation.add_book
     when '8'
-      # add_album
       music.add_music_album
     when '9'
-      # add_game
+      games.add_game
     else
       'Out of range, Enter digits: 1 thru 9'
     end
