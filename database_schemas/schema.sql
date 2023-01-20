@@ -9,3 +9,10 @@ CREATE TABLE books (
   label_id int,
   CONSTRAINT label_fk FOREIGN KEY (label_id) REFERENCES labels(id)
 );
+
+CREATE TABLE labels (
+  id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY, 
+  title VARCHAR(255) NOT NULL, 
+  color VARCHAR(255) NOT NULL,
+  items TEXT [] 
+);
