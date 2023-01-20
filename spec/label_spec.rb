@@ -14,7 +14,7 @@ describe 'Label' do
     it 'has items as an empty array' do
       expect(@label.items).to be_empty
     end
-    
+
     it 'adds an item to items' do
       @label.add_item(@item)
       expect(@label.items[0]).to be(@item)

@@ -2,7 +2,8 @@ require_relative 'spec_helper'
 
 describe 'Book' do
   before :each do
-    @book = Book.new(cover_state: 'good', name: 'The Silent Patient', publisher: 'Macmillan Publishers', publish_date: '2010-10-12')
+    @book = Book.new(cover_state: 'good', name: 'The Silent Patient', publisher: 'Macmillan Publishers',
+                     publish_date: '2010-10-12')
   end
 
   describe 'initialized in before(:each)' do
