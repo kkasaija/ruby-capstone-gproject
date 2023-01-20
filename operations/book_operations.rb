@@ -1,7 +1,7 @@
 require 'json'
-require './book'
-require './label'
-require './persist_data'
+require_relative '../classes/book'
+require_relative '../classes/label'
+require_relative 'persist_data'
 
 class BookOperations
   def initialize
@@ -12,13 +12,13 @@ class BookOperations
   # Function to Return a list of labels
 
   def list_all_books
-    load_books = PersistData.new('books.json')
+    load_books = PersistData.new('./store/books.json')
     books = load_books.load
     if books.empty?
       puts 'no book records found'.upcase
     else
       books.each_with_index do |book, index|
-        puts "(#{index}) Name: #{book['name']}, Publisher: #{book['publisher']}, PublishedDate: #{book['publish_date']}"
+        puts "(#{index}) Book_Name: #{book['name']}, Publisher: #{book['publisher']}, Published_Date: #{book['publish_date']}"
       end
       puts
     end
@@ -27,13 +27,13 @@ class BookOperations
   # Function to Return a list of labels
 
   def list_all_labels
-    load_labels = PersistData.new('labels.json')
+    load_labels = PersistData.new('./store/labels.json')
     labels = load_labels.load
     if labels.empty?
       puts 'no label records found'.upcase
     else
       labels.each_with_index do |label, index|
-        puts "(#{index}) Lable: #{label['title']}, Color: #{label['color']}"
+        puts "(#{index}) Lable_Name: #{label['title']}, Lable_Color: #{label['color']}"
       end
     end
   end
@@ -94,7 +94,7 @@ class BookOperations
   # Function to store Books
 
   def store_books
-    stored_books = PersistData.new('books.json')
+    stored_books = PersistData.new('./store/books.json')
     books = stored_books.load
     @books.each do |book|
       books << { name: book.name, publisher: book.publisher, publish_date: book.publish_date,
@@ -106,7 +106,7 @@ class BookOperations
   # Function to store Labels
 
   def store_labels
-    stored_labels = PersistData.new('labels.json')
+    stored_labels = PersistData.new('./store/labels.json')
     labels = stored_labels.load
     @labels.each do |label|
       labels << { title: label.title, color: label.color }

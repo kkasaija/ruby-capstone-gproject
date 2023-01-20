@@ -28,5 +28,10 @@ class Item
     @genre = genre
     genre.items.push(self) unless genre.items.include?(self)
   end
+
+  def author=(author)
+    @author = author
+    author.items.push(self) unless author.items.include?(self)
+  end
   private :can_be_archived?
 end
