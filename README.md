@@ -22,15 +22,16 @@
 - [📝 License](#license)
 
 # 📖 [CATALOG OF MY THINGS] <a name="about-project"></a>
-**[CATALOG OF MY THINGS]** This is a school library app implemented using classes, objects, encapsulation and inheritance with Ruby.
+**[CATALOG OF MY THINGS]** "Catalog of my things" is a simple console app that allows users to manage collections of the things they own.
 
 ## 🛠 Built With <a name="built-with">Ruby</a>
+- ruby
 
 ### Tech Stack <a name="tech-stack">Ruby</a>
 
- > Describe the tech stack and include only the relevant sections that apply to your project. -->
+ <!-- > Describe the tech stack and include only the relevant sections that apply to your project. -->
 
-<details>
+<!-- <details>
   <summary>Client</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
@@ -42,28 +43,34 @@
   <ul>
     <li><a href="https://expressjs.com/">Express.js</a></li>
   </ul>
-</details>
+</details> -->
 
-<details>
+<!-- <details>
 <summary>Database</summary>
   <ul>
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
-</details>
+</details> --> 
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- **[]**
-- **[]**
-- **[]**
-- **[]**
+- **List all books**
+- **List all music albums**
+- **List all games**
+- **List all genres**
+- **List all labels**
+- **List all authors**
+- **Add a book**
+- **Add a music album**
+- **Add a game**
+- **A means to Quit the application**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-- [Live Demo Link]()
+- [Live Demo Link](https://drive.google.com/file/d/1sZzqjjENOHRRgpYXsu_HWGJWV4PLKegc/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -72,11 +79,13 @@
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
+- Text Editor (VScode, Atom, Sublime text, etc)
+- Basic knowledge of ruby
 
 In order to run this project you need:
 
- > - install ruby
- > - Signup to Github
+ - install ruby
+ - Signup to Github
 
 ### Setup
 
@@ -84,7 +93,7 @@ Clone this repository to your desired folder:
 > Command:
 
 - `git clone git@github.com:Kasaija-Kenneth/ruby-capstone-gproject.git`
-- `cd ruby-capstone-gproject`
+- cd `ruby-capstone-gproject`
 
 ### Install
 
@@ -100,9 +109,8 @@ Clone this repository to your desired folder:
 >  ruby main.rd to run
 
 ### Run tests
-- Run the below command in your terminal for linter checks
-
-> rubocop
+- run `rspec` command to do spec_tests
+- Run the `rubocop -A` command in your terminal for linter checks and corrections
 
 ### Deployment
 
@@ -133,7 +141,7 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> -[ ] **[]**
+> -[ ] **[ To be communicated ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -160,20 +168,14 @@ If you like this project...
 I would like to thank...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+<!-- 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
+ Add at least 2 questions new developers would ask when they decide to use your project.
 - **[Question_1]**
-
   - [Answer_1]
-
 - **[Question_2]**
-
-  - [Answer_2]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+  - [Answer_2] -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p> 
 
 ## 📝 License <a name="license"></a>
 
