@@ -10,5 +10,11 @@
     "publisher": "jjj",
     "publish_date": "2022-01-02",
     "cover_state": "bad"
+  },
+  {
+    "name": "kenn bbok",
+    "publisher": "ken publisher",
+    "publish_date": "2022-07-01",
+    "cover_state": "good"
   }
 ]
